@@ -1,0 +1,285 @@
+/* ============================================================
+   KKNEW — Klik Klik Global Styles v1.0
+   Author: 2026.05
+   Repository: github.com/laganovskisuldis/klikklik
+   CDN: cdn.jsdelivr.net/gh/laganovskisuldis/klikklik@main/kknew.css
+   ============================================================ */
+
+/* 1) CSS Custom Properties */
+:root {
+  --kknew-deep: #0F3D4A;
+  --kknew-deep-2: #0A2A33;
+  --kknew-ink: #050E12;
+  --kknew-ink-2: #0A1418;
+  --kknew-slate: #4A6A7B;
+  --kknew-sand: #E7E2D8;
+  --kknew-sand-2: #F2EEE6;
+  --kknew-sand-3: #FAF8F3;
+  --kknew-coral: #FF5A2A;
+  --kknew-white: #FFFFFF;
+  --kknew-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --kknew-hero-img: url('https://i.imgur.com/PLACEHOLDER.jpg');
+  --kknew-cta-img: linear-gradient(135deg, #050E12 0%, #0F3D4A 100%);
+}
+
+/* 2) Pixieset default overrides */
+body { font-family: var(--kknew-sans) !important; }
+.site-header { font-family: var(--kknew-sans) !important; }
+.site-nav { font-family: var(--kknew-sans) !important; }
+.site-footer { font-family: var(--kknew-sans) !important; }
+.site-header a, .site-nav a, .site-footer a {
+  font-family: var(--kknew-sans) !important;
+  letter-spacing: 0.04em !important;
+}
+.site-logo, .site-title {
+  font-family: var(--kknew-sans) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+/* 3) KKNEW utility classes */
+.kknew-section *, .kknew-section *::before, .kknew-section *::after { box-sizing: border-box; }
+.kknew-section img { max-width: 100%; display: block; }
+.kknew-section a { color: inherit; text-decoration: none; }
+.kknew-section button { 
+  font: inherit; cursor: pointer; border: none; background: none; color: inherit;
+  font-family: var(--kknew-sans);
+}
+.kknew-container {
+  width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 40px;
+  position: relative;
+}
+.kknew-section-num {
+  font-family: var(--kknew-sans);
+  font-style: italic; font-weight: 300;
+  font-size: 13px; color: var(--kknew-coral); opacity: 0.9;
+  margin-bottom: 18px; display: block; letter-spacing: 0.04em;
+}
+.kknew-section-label {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 32px;
+  font-family: var(--kknew-sans);
+}
+.kknew-section-label::before { 
+  content:''; width: 28px; height: 1px; background: currentColor; 
+}
+
+/* 4) Buttons */
+.kknew-btn-primary {
+  background: var(--kknew-coral); color: var(--kknew-white);
+  padding: 18px 32px; border-radius: 100px; 
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 32px rgba(255,90,42,0.28);
+  font-family: var(--kknew-sans);
+  text-decoration: none;
+}
+.kknew-btn-primary:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 14px 44px rgba(255,90,42,0.5); 
+  color: var(--kknew-white);
+}
+.kknew-btn-primary svg { transition: transform 0.3s ease; }
+.kknew-btn-primary:hover svg { transform: translateX(5px); }
+
+.kknew-btn-glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  color: var(--kknew-white);
+  padding: 17px 32px; border-radius: 100px; 
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  font-family: var(--kknew-sans);
+  text-decoration: none;
+}
+.kknew-btn-glass:hover { 
+  background: rgba(255,255,255,0.12); 
+  border-color: rgba(255,255,255,0.3); 
+  color: var(--kknew-white);
+}
+
+.kknew-btn-outline-dark {
+  background: transparent;
+  border: 1px solid var(--kknew-deep);
+  color: var(--kknew-deep);
+  padding: 17px 32px; border-radius: 100px;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: var(--kknew-sans);
+  text-decoration: none;
+}
+.kknew-btn-outline-dark:hover {
+  background: var(--kknew-deep); color: var(--kknew-white);
+}
+
+.kknew-link-arrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--kknew-coral); font-weight: 600;
+  border-bottom: 1px solid currentColor; padding-bottom: 8px;
+  transition: gap 0.3s ease;
+  font-family: var(--kknew-sans);
+  text-decoration: none;
+}
+.kknew-link-arrow:hover { gap: 20px; color: var(--kknew-coral); }
+
+/* 5) Universal section shell */
+.kknew-section {
+  font-family: var(--kknew-sans);
+  font-weight: 300;
+  position: relative;
+}
+.kknew-section.dark { background: var(--kknew-ink); color: var(--kknew-white); }
+.kknew-section.darker { background: var(--kknew-ink-2); color: var(--kknew-white); }
+.kknew-section.light { background: var(--kknew-sand); color: var(--kknew-ink); }
+.kknew-section.lightest { background: var(--kknew-sand-3); color: var(--kknew-ink); }
+.kknew-section.padded { padding: 180px 0 160px; }
+.kknew-section.padded-sm { padding: 100px 0; }
+
+.kknew-h2 {
+  font-family: var(--kknew-sans); font-weight: 200;
+  font-size: clamp(48px, 6.5vw, 96px); 
+  line-height: 0.98; letter-spacing: -0.035em;
+  margin: 0;
+}
+.kknew-h2 em { 
+  font-style: italic; color: var(--kknew-coral); font-weight: 400; 
+}
+
+/* 6) Gradient placeholders */
+.kknew-bg-gradient-1 { background: linear-gradient(135deg, #5C7B89 0%, #1E3340 60%, #0A1A22 100%); }
+.kknew-bg-gradient-2 { background: linear-gradient(135deg, #E89366 0%, #B5491F 60%, #6B2810 100%); }
+.kknew-bg-gradient-3 { background: linear-gradient(160deg, #8F9CAA 0%, #3F4E58 60%, #182026 100%); }
+.kknew-bg-gradient-4 { background: linear-gradient(160deg, #FF8B5A 0%, #C13D1A 50%, #5C1A08 100%); }
+.kknew-bg-gradient-5 { background: linear-gradient(180deg, #2D3F4A 0%, #0F2129 60%, #050E12 100%); }
+.kknew-bg-gradient-6 { background: linear-gradient(160deg, #C49B7B 0%, #6B4A2E 50%, #2E1F12 100%); }
+.kknew-bg-gradient-7 { background: linear-gradient(180deg, #4A6A7B 0%, #1F3540 50%, #0A1418 100%); }
+.kknew-bg-gradient-8 { background: linear-gradient(180deg, #8B7355 0%, #4A3826 50%, #1F1611 100%); }
+.kknew-bg-gradient-9 { background: linear-gradient(180deg, #6B8B82 0%, #2E4A42 50%, #0F1F1B 100%); }
+
+/* 7) Animations */
+@keyframes kknew-fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes kknew-fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes kknew-gradient-shift {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  50% { transform: translate(3%, -2%) scale(1.05); opacity: 0.55; }
+}
+@keyframes kknew-pulse { 
+  0%,100% { opacity:1; transform: scale(1);} 
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+@keyframes kknew-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes kknew-lineIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.kknew-reveal {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.kknew-reveal.is-visible {
+  opacity: 1; transform: translateY(0);
+}
+.kknew-reveal-delay-1 { transition-delay: 0.1s; }
+.kknew-reveal-delay-2 { transition-delay: 0.2s; }
+.kknew-reveal-delay-3 { transition-delay: 0.3s; }
+
+/* 8) Vimeo lightbox modal */
+.kknew-vimeo-modal {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(5,14,18,0.92);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 40px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.kknew-vimeo-modal.is-open { display: flex; opacity: 1; }
+.kknew-vimeo-modal-inner {
+  position: relative;
+  width: 100%; max-width: 1100px;
+  aspect-ratio: 16/9;
+}
+.kknew-vimeo-modal-inner.vertical {
+  max-width: 420px; aspect-ratio: 9/16;
+}
+.kknew-vimeo-modal iframe {
+  width: 100%; height: 100%; border: none; border-radius: 12px;
+}
+.kknew-vimeo-close {
+  position: absolute; top: -56px; right: 0;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: var(--kknew-white);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+.kknew-vimeo-close:hover { background: var(--kknew-coral); border-color: var(--kknew-coral); }
+
+/* 9) Mobile nav overlay */
+.kknew-mobile-nav {
+  position: fixed; inset: 0; z-index: 9998;
+  background: var(--kknew-ink);
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; flex-direction: column;
+  padding: 100px 32px 32px;
+}
+.kknew-mobile-nav.is-open { transform: translateX(0); }
+.kknew-mobile-nav-links {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.kknew-mobile-nav-links li a {
+  display: block;
+  font-family: var(--kknew-sans);
+  font-weight: 200; font-size: 36px;
+  letter-spacing: -0.02em;
+  color: var(--kknew-white);
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+}
+.kknew-mobile-nav-links li a:hover { color: var(--kknew-coral); }
+.kknew-mobile-nav-close {
+  position: absolute; top: 28px; right: 28px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: var(--kknew-white);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* 10) Responsive */
+@media (max-width: 1024px) {
+  .kknew-section.padded { padding: 120px 0 100px; }
+}
+@media (max-width: 768px) {
+  .kknew-container { padding: 0 20px; }
+  .kknew-section.padded { padding: 90px 0 80px; }
+  .kknew-h2 { font-size: 42px !important; }
+  .kknew-vimeo-modal { padding: 20px; }
+  .kknew-vimeo-close { top: -48px; }
+}
